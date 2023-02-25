@@ -4,6 +4,7 @@ void main() {
   runApp(MaterialApp(
     title: 'New App',
     home: Homepage(),
+    theme: ThemeData(primarySwatch: Colors.purple),
   ));
 }
 
@@ -16,34 +17,46 @@ class Homepage extends StatelessWidget {
       appBar: AppBar(
         title: Text("NewApp"),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Align(
-          alignment: Alignment.center,
-          child: Container(
-            color: Colors.black,
-            width: 200,
-            height: 400,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Container(
-            padding: EdgeInsets.all(8),
-            width: 100,
-            height: 100,color: Colors.green,
-                  ),
-                  Container(
-            padding: EdgeInsets.all(8),
-            width: 100,
-            height: 100,color: Colors.yellow,
-          ),
-                  Container(
-            padding: EdgeInsets.all(8),
-            width: 100,
-            height: 100,color: Colors.red,
-          ),
-                ],
-              )),
+      body: Container(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.edit),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+          
+              UserAccountsDrawerHeader(
+                accountName: Text("Akshay"),
+                accountEmail: Text("akshay0127.be21@chitkara.edu.in"),
+              currentAccountPicture: CircleAvatar(backgroundImage: NetworkImage("https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8TWFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"),),),
+            
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Account"),
+              subtitle: Text("Akshay"),
+              trailing: Icon(Icons.edit),
+            ),
+            ListTile(
+              leading: Icon(Icons.email),
+              title: Text("Email"),
+              subtitle: Text("akshay0127.be21@chitkara.edu.in"),
+              trailing: Icon(Icons.send),
+            ),
+            // ListTile(
+            //   leading: Icon(Icons.email),
+            //   title: Text("Email"),
+            //   subtitle: Text("akshay0127.be21@chitkara.edu.in"),
+            //   trailing: Icon(Icons.send),
+            // ),
+            // ListTile(
+            //   leading: Icon(Icons.email),
+            //   title: Text("Email"),
+            //   subtitle: Text("akshay0127.be21@chitkara.edu.in"),
+            //   trailing: Icon(Icons.send),
+            // ),
+          ],
         ),
       ),
     );
